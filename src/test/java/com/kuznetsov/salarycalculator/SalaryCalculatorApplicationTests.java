@@ -1,4 +1,4 @@
-package com.paragonsoftware.salarycalculator;
+package com.kuznetsov.salarycalculator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
