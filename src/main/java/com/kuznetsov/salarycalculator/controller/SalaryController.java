@@ -1,7 +1,7 @@
-package com.paragonsoftware.salarycalculator.controller;
+package com.kuznetsov.salarycalculator.controller;
 
-import com.paragonsoftware.salarycalculator.model.Salary;
-import com.paragonsoftware.salarycalculator.report.SalaryRequestStatus;
+import com.kuznetsov.salarycalculator.model.Salary;
+import com.kuznetsov.salarycalculator.report.SalaryRequestStatus;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;

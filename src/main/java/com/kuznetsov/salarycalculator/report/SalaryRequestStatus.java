@@ -1,4 +1,4 @@
-package com.paragonsoftware.salarycalculator.report;
+package com.kuznetsov.salarycalculator.report;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

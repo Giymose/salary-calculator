@@ -1,4 +1,4 @@
-package com.paragonsoftware.salarycalculator.model;
+package com.kuznetsov.salarycalculator.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
