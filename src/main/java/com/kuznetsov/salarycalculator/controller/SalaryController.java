@@ -57,6 +57,14 @@ public class SalaryController {
         return ResponseEntity.ok(salary);
     }
 
+    @ResponseBody
+    @DeleteMapping("/v1/delete/{id}")
+    public ResponseEntity<SalaryRequestStatus> deleteSalary(@ApiParam @PathVariable Long id) {
+        log.info("Deleting information about salary.....");
+        salaryRepository.deleteSalaryById(id);
+        return ResponseEntity.ok(new SalaryRequestStatus("SUCCESS", "Information about salary was deleted from DB!"));
+    }
+
     private Date getDate() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2018, Calendar.AUGUST, 1, 23, 23, 23);

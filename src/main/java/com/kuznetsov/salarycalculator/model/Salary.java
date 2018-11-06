@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -17,8 +19,7 @@ import java.util.Date;
 public class Salary {
 
     @Id
-    @GeneratedValue
-    @Column(name = "id", nullable = false, unique = true)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "amount", nullable = false)
