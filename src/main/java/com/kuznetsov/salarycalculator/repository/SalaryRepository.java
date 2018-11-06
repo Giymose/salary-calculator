@@ -10,6 +10,6 @@ import java.util.List;
 public interface SalaryRepository extends CrudRepository<Salary, Long> {
 
    List<Salary> findAll();
-   List<Salary> findSalaryById(Long id);
+   Salary findSalaryById(Long id);
 
 }

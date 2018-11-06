@@ -4,19 +4,18 @@ import com.kuznetsov.salarycalculator.model.Salary;
 import com.kuznetsov.salarycalculator.report.SalaryRequestStatus;
 import com.kuznetsov.salarycalculator.repository.SalaryRepository;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -43,11 +42,19 @@ public class SalaryController {
     }
 
     @ResponseBody
-    @GetMapping("/v1/get")
-    public ResponseEntity<List<Salary>> get() {
-        log.info("Getting information about salary.....");
+    @GetMapping("/v1/getAll")
+    public ResponseEntity<List<Salary>> getAllSalaries() {
+        log.info("Getting information about salaries.....");
         List<Salary> all = salaryRepository.findAll();
         return ResponseEntity.ok(all);
+    }
+
+    @ResponseBody
+    @GetMapping("/v1/get/{id}")
+    public ResponseEntity<Salary> getSalary(@ApiParam @PathVariable Long id) {
+        log.info("Getting information about salary.....");
+        Salary salary = salaryRepository.findSalaryById(id);
+        return ResponseEntity.ok(salary);
     }
 
     private Date getDate() {
